@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: #4B8BBE; /* Brighter Python Blue */
+  --color-brand-secondary: #FFE873; /* Brighter Python Yellow */
+  --color-dark-bg: #050505;
+  --color-dark-surface: #121212;
+  --color-dark-border: #222222;
+}
+
+@utility tech-grid {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+@utility glow-primary {
+  box-shadow: 0 0 20px rgba(75, 139, 190, 0.3);
+}
+
+@utility glow-text-primary {
+  text-shadow: 0 0 10px rgba(75, 139, 190, 0.5);
+}
+
+.markdown-body {
+  @apply prose prose-invert max-w-none;
+}
+
+.markdown-body h1 {
+  @apply font-display text-3xl font-bold mb-6 text-white glow-text-primary;
+}
+
+.markdown-body h2 {
+  @apply font-display text-2xl font-semibold mt-8 mb-4 text-slate-100;
+}
+
+.markdown-body h3 {
+  @apply font-display text-xl font-semibold mt-6 mb-3 text-slate-200;
+}
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed text-slate-400;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 mb-4 space-y-2 text-slate-400;
+}
+
+.markdown-body code {
+  @apply font-mono bg-white/10 px-1.5 py-0.5 rounded text-sm text-brand-secondary;
+}
+
+.markdown-body pre {
+  @apply font-mono bg-black/50 text-slate-100 p-4 rounded-xl border border-white/10 overflow-x-auto mb-6;
+}
+
+/* Code Editor Styles */
+.prism-editor-wrapper {
+  background-color: transparent !important;
+}
+
+.prism-editor-wrapper textarea {
+  outline: none !important;
+}
+
+.prism-editor-wrapper pre {
+  margin: 0 !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-slate-500;
+}
+
+.token.punctuation {
+  @apply text-slate-400;
+}
+
+.token.namespace {
+  @apply opacity-70;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-rose-400;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-emerald-400;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  @apply text-brand-secondary;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-brand-primary;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-brand-secondary;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-amber-400;
+}
+
